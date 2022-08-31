@@ -1,31 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 
-const Login = (_props: any) => {
-  useEffect(() => {
-    localStorage.setItem("name", JSON.stringify(name))
-    localStorage.setItem("phone", JSON.stringify(phone))
-    localStorage.setItem("company", JSON.stringify(company))
-  })
-  const [name, setName] = useState(() => {
-    const saved = localStorage.getItem("name")
-    const initialValue = saved ? JSON.parse(saved) : ""
-    return initialValue || ""
-  })
-  const [phone, setPhone] = useState(() => {
-    const saved = localStorage.getItem("phone")
-    const initialValue = saved ? JSON.parse(saved) : ""
-    return initialValue || ""
-  })
-  const [company, setCompany] = useState(() => {
-    const saved = localStorage.getItem("company")
-    const initialValue = saved ? JSON.parse(saved) : ""
-    return initialValue || ""
-  })
-    localStorage.clear()
-    useEffect(() => {
-      const name = localStorage.getItem("name")
-    })
+const Admin = (_props: any) => {
 
   return (
     <>
@@ -55,10 +31,10 @@ const Login = (_props: any) => {
                 <form className='max-w-screen-md mx-auto'>
                   <div className='flex flex-col mb-4'>
                     <label
-                      htmlFor='name'
+                      htmlFor='Email'
                       className='inline-flex mb-2 text-sm text-gray-800'
                     >
-                      Please enter your name
+                      Please enter your email
                     </label>
                     <input
                       className='
@@ -73,17 +49,15 @@ const Login = (_props: any) => {
                       focus:ring
                       ring-indigo-300
                     '
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
 
                   <div className='flex flex-col mb-4'>
                     <label
-                      htmlFor='phone'
+                      htmlFor='Password'
                       className='inline-flex mb-2 text-sm text-gray-800'
                     >
-                      Please enter a phone number
+                      Please enter a phone password
                     </label>
                     <input
                       className='
@@ -98,33 +72,6 @@ const Login = (_props: any) => {
                       focus:ring
                       ring-indigo-300
                     '
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                    />
-                  </div>
-
-                  <div className='flex flex-col mb-2'>
-                    <label
-                      htmlFor='company'
-                      className='inline-flex mb-2 text-sm text-gray-800'
-                    >
-                      Please enter your company name (optional)
-                    </label>
-                    <input
-                      className='
-                      w-full
-                      px-3
-                      py-2
-                      text-gray-800
-                      border
-                      rounded
-                      outline-none
-                      bg-gray-50
-                      focus:ring
-                      ring-indigo-300
-                    '
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
                     />
                   </div>
                   <div className='flex items-center justify-between'>
@@ -153,4 +100,4 @@ const Login = (_props: any) => {
   )
 }
 
-export default Login
+export default Admin

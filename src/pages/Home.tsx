@@ -17,17 +17,14 @@ const Home = () => {
   let password = ''
   let header = {
     'Content-Type': 'application/json',
-    'allow-control-allow-origin': '*'
+    'allow-control-allow-origin': '*',
+    Authorization: 'Basic ' + (username + ':' + password)
   }
 
   useEffect(() => {
     axios
       .get(session_url, {
-        headers: header,
-        auth: {
-          username: username,
-          password: password
-        }
+        headers: header
       })
       .then(function (response) {
         console.log('test ', response)
